@@ -17,7 +17,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', [ContentController::class, 'index'])->name('content.edit');
+Route::get('/', [ContentController::class, 'index'])->name('contentEdit');
 
 
 Route::get('/dashboard', function () {

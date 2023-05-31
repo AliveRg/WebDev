@@ -2,18 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreContentRequest;
-use App\Http\Requests\UpdateContentRequest;
-use App\Models\Content;
-use Illuminate\Support\Facades\DB;
+use App\Models\Product;
 use Inertia\Inertia;
+
+
 use Illuminate\Http\Request;
-
-use Illuminate\Support\Facades\Route;
-
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Inertia\Response;
+use Illuminate\Support\Facades\DB;
 
 class ContentController extends Controller
 {
@@ -22,12 +16,12 @@ class ContentController extends Controller
      */
     public function index()
     {
+        
+       
         $users = DB::table('users') 
         -> get();
         // dd($products);
         return Inertia::render('Welcome', compact('users'));
-       
-   
     }
 
     /**
