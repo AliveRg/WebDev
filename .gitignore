@@ -1,10 +1,12 @@
 /.phpunit.cache
 /bootstrap/ssr
 /storage/*.key
-/vendor
+
 .phpunit.result.cache
+auth.json
 npm-debug.log
 yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
