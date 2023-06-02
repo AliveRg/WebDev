@@ -1,1 +1,0 @@
-import{_ as e}from"./GuestLayout-5602e990.js";import{o as t,c as o}from"./app-e264775e.js";const s={data(){return{}},props:{users:Object},name:"Welcome",components:{}},p=Object.assign(s,{setup(c){return(r,a)=>(t(),o(e))}});export{p as default};
