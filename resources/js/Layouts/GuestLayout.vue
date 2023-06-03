@@ -6,7 +6,7 @@ import { useDark, useToggle } from "@vueuse/core";
 </script>
 
 <template>
-    <header class="w-full px-2 py-8 bg-bgLight dark:bg-bgDark">
+    <header class="w-full px-4 pt-8 bg-bgLight dark:bg-bgDark">
         <section
             class="w-full grid grid-flow-row gap-[20px] md:gap-2 max-w-sm sm:max-w-lg sm:grid-cols-2 mx-auto md:grid-cols-4 md:max-w-4xl lg:max-w-[1380px]"
         >
@@ -85,8 +85,12 @@ import { useDark, useToggle } from "@vueuse/core";
         </section>
     </header>
 
-    <div class="">
-        <slot />
+    <div class="bg-bgLight dark:bg-bgDark pt-10 overflow-hidden pb-96">
+        <div
+            class="max-w-sm mx-auto sm:max-w-lg md:max-w-4xl lg:max-w-[1380px]"
+        >
+            <slot />
+        </div>
     </div>
 </template>
 
