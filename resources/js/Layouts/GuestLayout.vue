@@ -13,7 +13,7 @@ import { useDark, useToggle } from "@vueuse/core";
             <div
                 class="text-2xl text-textLight dark:text-textDark font-extrabold uppercase flex items-center justify-between gap-8 sm:flex-col sm:items-start sm:gap-2 md:order-1 md:text-3xl md:w-2/3 lg:text-5xl"
             >
-                <p class="">R & G</p>
+                <p class="">R&G</p>
                 <p
                     class="text-sm font-normal sm:text-xs md:text-sm lg:text-xl md:hidden"
                 >
@@ -44,7 +44,7 @@ import { useDark, useToggle } from "@vueuse/core";
                 >
                     <div class="text-black text-md text-center grid gap-2">
                         <p
-                            class="bg-accentLight dark:bg-accentDark py-1 px-3 rounded-xl text-textLight dark:text-textDark"
+                            class="bg-accentLight dark:bg-accentDark py-1 px-3 rounded-xl text-black dark:text-textDark"
                         >
                             Обратный Звонок
                         </p>
@@ -85,7 +85,7 @@ import { useDark, useToggle } from "@vueuse/core";
         </section>
     </header>
 
-    <div class="bg-bgLight dark:bg-bgDark pt-10 overflow-hidden pb-96">
+    <div class="bg-bgLight dark:bg-bgDark pt-10 overflow-hidden">
         <div
             class="max-w-sm mx-auto sm:max-w-lg md:max-w-4xl lg:max-w-[1380px]"
         >
@@ -97,7 +97,7 @@ import { useDark, useToggle } from "@vueuse/core";
 <script>
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-console.log(isDark);
+
 export default {
     data() {
         return {
