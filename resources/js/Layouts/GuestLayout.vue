@@ -2,42 +2,86 @@
 import { ref } from "vue";
 import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 import { Link } from "@inertiajs/vue3";
+import { useDark, useToggle } from "@vueuse/core";
 </script>
 
 <template>
-    <header class="w-full px-2 py-8 bg-bgLight/40">
-        <section class="w-full grid grid-flow-row gap-[27px] justify-center">
+    <header class="w-full px-2 py-8 bg-bgLight dark:bg-bgDark">
+        <section
+            class="w-full grid grid-flow-row gap-[20px] md:gap-2 max-w-sm sm:max-w-lg sm:grid-cols-2 mx-auto md:grid-cols-4 md:max-w-4xl lg:max-w-[1380px]"
+        >
             <div
-                class="text-2xl text-black font-extrabold uppercase flex items-center justify-center gap-8"
+                class="text-2xl text-textLight dark:text-textDark font-extrabold uppercase flex items-center justify-between gap-8 sm:flex-col sm:items-start sm:gap-2 md:order-1 md:text-3xl md:w-2/3 lg:text-5xl"
             >
-                <p>R & G</p>
-                <p class="text-sm font-normal">Студия создания сайтов</p>
+                <p class="">R & G</p>
+                <p
+                    class="text-sm font-normal sm:text-xs md:text-sm lg:text-xl md:hidden"
+                >
+                    Студия создания сайтов
+                </p>
             </div>
-            <div class="text-xl font-extrabold">
-                <a href="">+7 (919) 289 75 05</a>
+            <div
+                class="text-lg text-textLight dark:text-textDark font-extrabold leading-7 flex justify-start sm:justify-end md:order-3 md:items-center lg:text-2xl animate-pulse"
+            >
+                <a class="md:hidden flex items-center gap-2" href=""
+                    ><span class="material-symbols-outlined">
+                        phone_forwarded
+                    </span>
+                    +7 (919) 289 75 05</a
+                >
+                <a class="hidden md:flex md:items-center md:gap-4" href=""
+                    ><span class="material-symbols-outlined">
+                        phone_forwarded
+                    </span>
+                    +7 (919) 28...</a
+                >
             </div>
-            <div class="w-full flex justify-between items-center">
-                <div class="text-black text-md text-center grid gap-2">
-                    <p class="bg-currentLight py-1 px-3 rounded-xl">
-                        Обратный Звонок
+            <div
+                class="w-full flex md: sm:col-span-2 md:order-4 md:col-span-4 md:justify-start"
+            >
+                <div
+                    class="flex w-full justify-between items-center sm:col-span-2 md:order-4 md:col-span-4 md:justify-start md:gap-10 md:flex-row-reverse"
+                >
+                    <div class="text-black text-md text-center grid gap-2">
+                        <p
+                            class="bg-accentLight dark:bg-accentDark py-1 px-3 rounded-xl text-textLight dark:text-textDark"
+                        >
+                            Обратный Звонок
+                        </p>
+                    </div>
+
+                    <label
+                        class="switch relative inline-block w-[60px] h-[34px]"
+                    >
+                        <input
+                            type="checkbox"
+                            class="hidden"
+                            :checked="isDark"
+                            @click="toggleDark(), toggleCheckbox"
+                        />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+                <div
+                    class="hidden md:block text-textLight dark:text-textDark justify-self-start"
+                >
+                    <p
+                        class="text-sm font-normal sm:text-xs md:text-lg lg:text-xl"
+                    >
+                        Студия создания сайтов
                     </p>
                 </div>
-
-                <label class="switch relative inline-block w-[60px] h-[34px]">
-                    <input
-                        type="checkbox"
-                        class="hidden"
-                        @click="toggleCheckbox"
-                    />
-                    <div class="slider round"></div>
-                </label>
             </div>
-            <div class="flex justify-between items-center font-bold text-sm">
+            <div
+                class="flex justify-between items-center font-bold text-sm text-textLight dark:text-textDark sm:col-span-2 md:order-2 md:text-lg lg:text-2xl"
+            >
                 <a class="" href="">Расчет стоимости</a>
                 <a class="" href="">Услуги</a>
                 <a class="" href="">Портфолио</a>
             </div>
-            <hr class="w-full border-black outline-2" />
+            <hr
+                class="w-full border-black dark:border-accentDark outline-2 mt-2 sm:col-span-2 md:order-5 md:col-span-4"
+            />
         </section>
     </header>
 
@@ -47,22 +91,19 @@ import { Link } from "@inertiajs/vue3";
 </template>
 
 <script>
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+console.log(isDark);
 export default {
     data() {
         return {
-            checkbox: false,
+            checkbox: isDark,
         };
     },
     methods: {
         toggleCheckbox() {
-            this.checkbox = !this.checkbox;
-            this.$emit("setCheckboxVal", this.checkbox);
+            this.$emit("setCheckboxVal", this.isDark);
         },
-        props: {
-            users: Object,
-        },
-        name: "Welcome",
-        components: {},
     },
 };
 </script>
@@ -109,7 +150,7 @@ export default {
 }
 
 input:checked + .slider {
-    background-color: #101010;
+    background-color: #f2ae30;
 }
 
 input:focus + .slider {
