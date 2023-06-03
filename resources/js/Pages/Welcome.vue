@@ -2,12 +2,15 @@
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 import { Head, Link } from "@inertiajs/vue3";
+// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 </script>
 
 <template>
     <GuestLayout>
         <section
-            class="grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
+            class="unselectable grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
         >
             <div
                 class="flex flex-col z-10 gap-4 items-center justify-center md:items-start md:gap-10 overflow-hidden text-center md:text-start text-3xl text-black dark:text-textDark font-extrabold sm:text-4xl md:text-5xl lg:text-6xl"
@@ -95,17 +98,23 @@ import { Head, Link } from "@inertiajs/vue3";
                     Комплектом дешевле
                 </p>
             </div>
-            <div class="flex gap-8">
-                <div
-                    class="bg-currentLight h-[333px] w-[213px] md:w-[256px] md:h-[400px] lg:w-[369px] lg:h-[570px] rounded-xl shadow-md hover:shadow-xl hover:scale-105 duration-300"
-                ></div>
-                <div
-                    class="bg-currentLight h-[333px] w-[213px] md:w-[256px] md:h-[400px] lg:w-[369px] lg:h-[570px] rounded-xl shadow-md hover:shadow-xl hover:scale-105 duration-300"
-                ></div>
-                <div
-                    class="bg-currentLight h-[333px] w-[213px] md:w-[256px] md:h-[400px] lg:w-[369px] lg:h-[570px] rounded-xl shadow-md hover:shadow-xl hover:scale-105 duration-300"
-                ></div>
-            </div>
+
+            <carousel v-bind="settings" :breakpoints="breakpoints">
+                <slide v-for="slide in 3" :key="slide">
+                    <div class="flex justify-center w-full items-center my-16">
+                        <div
+                            class="carousel__item bg-currentLight h-[333px] w-[213px] md:w-[256px] md:h-[400px] lg:w-[369px] lg:h-[570px] rounded-xl shadow-md hover:shadow-xl hover:scale-105 duration-300"
+                        >
+                            {{ slide }}
+                        </div>
+                    </div>
+                </slide>
+
+                <template #addons>
+                    <navigation />
+                    <pagination />
+                </template>
+            </carousel>
         </section>
     </GuestLayout>
 </template>
@@ -119,7 +128,30 @@ export default {
         users: Object,
     },
     name: "Welcome",
-    components: {},
+    components: {
+        Carousel,
+        Slide,
+        Pagination,
+        Navigation,
+    },
+    data: () => ({
+        // carousel settings
+        settings: {
+            itemsToShow: 1,
+        },
+        // breakpoints are mobile first
+        // any settings not specified will fallback to the carousel settings
+        breakpoints: {
+            // 700px and up
+            771: {
+                itemsToShow: 1.5,
+            },
+            // 1024 and up
+            1024: {
+                itemsToShow: 2.4,
+            },
+        },
+    }),
 };
 </script>
 
@@ -137,5 +169,12 @@ export default {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.unselectable {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 </style>

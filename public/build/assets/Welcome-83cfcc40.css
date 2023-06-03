@@ -1,1 +1,0 @@
-.root-anim{animation:20s linear 0s normal none infinite running rot}.root-anim1{animation:10s linear 0s normal none infinite running rot}.unselectable{-moz-user-select:none;-webkit-user-select:none;user-select:none}@keyframes rot{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
