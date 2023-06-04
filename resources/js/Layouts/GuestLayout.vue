@@ -23,13 +23,17 @@ import { useDark, useToggle } from "@vueuse/core";
             <div
                 class="text-lg text-textLight dark:text-textDark font-extrabold leading-7 flex justify-start sm:justify-end md:order-3 md:items-center lg:text-2xl animate-pulse"
             >
-                <a class="md:hidden flex items-center gap-2" href=""
+                <a
+                    class="md:hidden flex items-center gap-2"
+                    href="tel:+79192897505"
                     ><span class="material-symbols-outlined">
                         phone_forwarded
                     </span>
                     +7 (919) 289 75 05</a
                 >
-                <a class="hidden md:flex md:items-center md:gap-4" href=""
+                <a
+                    class="hidden md:flex md:items-center md:gap-4"
+                    href="tel:+79192897505"
                     ><span class="material-symbols-outlined">
                         phone_forwarded
                     </span>
@@ -85,7 +89,7 @@ import { useDark, useToggle } from "@vueuse/core";
         </section>
     </header>
 
-    <div class="bg-bgLight dark:bg-bgDark pt-10 overflow-hidden">
+    <div class="bg-bgLight dark:bg-bgDark overflow-hidden">
         <div
             class="max-w-sm mx-auto sm:max-w-lg md:max-w-4xl lg:max-w-[1380px]"
         >

@@ -2,16 +2,17 @@
 import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 import { Head, Link } from "@inertiajs/vue3";
-// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
-import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import Carusel from "@/Components/Carusel.vue";
 </script>
 
 <template>
     <GuestLayout>
         <section
-            class="unselectable grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
+            class="unselectable relative grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
         >
+            <div
+                class="absolute top-0 left-0 right-0 bottom-10 bg-[url('images/bg.jpg')] bg-cover blur-sm"
+            ></div>
             <div
                 class="flex flex-col z-10 gap-4 items-center justify-center md:items-start md:gap-10 overflow-hidden text-center md:text-start text-3xl text-black dark:text-textDark font-extrabold sm:text-4xl md:text-5xl lg:text-6xl"
             >
@@ -33,63 +34,74 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
                     </p>
                 </div>
             </div>
+
             <div class="max-w-xl relative">
-                <div class="relative z-10 flex justify-center gap-2 items-end">
+                <div class="relative z-20 flex justify-center gap-2 items-end">
                     <img
-                        class="w-3/4"
+                        class="w-3/4 block dark:hidden"
                         src="images/preview-design.webp"
                         alt=""
                     />
                     <img
-                        class="w-1/6 h-1/2"
+                        class="w-1/6 h-1/2 block dark:hidden"
                         src="images/preview-iphone.webp"
                         alt=""
+                    />
+                    <img
+                        src="images/preview-designdark.webp"
+                        alt=""
+                        class="hidden dark:block w-3/4"
+                    />
+                    <img
+                        src="images/preview-iphoneDark.webp"
+                        alt=""
+                        class="hidden dark:block w-1/6 h-1/2"
                     />
                 </div>
 
                 <img
-                    class="hidden dark:block dark:absolute -top-32 left-44 h-full z-0 root-anim1"
-                    src="images/meh1.png"
-                    alt=""
-                />
-                <img
-                    class="hidden dark:block dark:absolute top-0 -left-44 h-full z-0 root-anim"
-                    src="images/meh2.png"
-                    alt=""
-                />
-                <img
-                    class="hidden dark:block dark:absolute top-10 left-64 h-full z-0 root-anim"
-                    src="images/meh3.png"
-                    alt=""
-                />
-                <img
-                    class="hidden dark:block dark:absolute top-24 -left-0 h-full z-0 root-anim1"
-                    src="images/meh4.png"
-                    alt=""
-                />
-                <img
-                    class="block dark:hidden absolute opacity-60 dark:opacity-100 -top-32 left-44 h-full z-0 root-anim1"
+                    class="hidden dark:block dark:absolute opacity-100 -top-32 left-44 h-full z-0 root-anim1"
                     src="images/meh12.png"
                     alt=""
                 />
                 <img
-                    class="block dark:hidden absolute opacity-60 dark:opacity-100 top-0 -left-44 h-full z-0 root-anim"
+                    class="hidden dark:block dark:absolute opacity-100 top-0 -left-44 h-full z-0 root-anim"
                     src="images/meh22.png"
                     alt=""
                 />
                 <img
-                    class="block dark:hidden absolute opacity-60 dark:opacity-100 top-10 left-64 h-full z-0 root-anim"
+                    class="hidden dark:block dark:absolute opacity-100 top-10 left-64 h-full z-0 root-anim"
                     src="images/meh33.png"
                     alt=""
                 />
                 <img
-                    class="block dark:hidden absolute opacity-60 dark:opacity-100 top-24 -left-0 h-full z-0 root-anim1"
+                    class="hidden dark:block dark:absolute opacity-100 top-24 -left-0 h-full z-0 root-anim1"
+                    src="images/meh44.png"
+                    alt=""
+                />
+                <img
+                    class="block dark:hidden absolute opacity-60 -top-32 left-44 h-full z-0 root-anim1"
+                    src="images/meh12.png"
+                    alt=""
+                />
+                <img
+                    class="block dark:hidden absolute opacity-60 top-0 -left-44 h-full z-0 root-anim"
+                    src="images/meh22.png"
+                    alt=""
+                />
+                <img
+                    class="block dark:hidden absolute opacity-60 top-10 left-64 h-full z-0 root-anim"
+                    src="images/meh33.png"
+                    alt=""
+                />
+                <img
+                    class="block dark:hidden absolute opacity-60 top-24 -left-0 h-full z-0 root-anim1"
                     src="images/meh44.png"
                     alt=""
                 />
             </div>
         </section>
-        <section class="grid grid-flow-row justify-center gap-12 pb-64">
+        <section class="grid grid-flow-row gap-12 pb-64">
             <div
                 class="text-center md:text-start text-2xl text-textLight dark:text-textDark font-extrabold sm:text-3xl md:text-4xl lg:text-5xl"
             >
@@ -99,22 +111,7 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
                 </p>
             </div>
 
-            <carousel v-bind="settings" :breakpoints="breakpoints">
-                <slide v-for="slide in 3" :key="slide">
-                    <div class="flex justify-center w-full items-center my-16">
-                        <div
-                            class="carousel__item bg-currentLight h-[333px] w-[213px] md:w-[256px] md:h-[400px] lg:w-[369px] lg:h-[570px] rounded-xl shadow-md hover:shadow-xl hover:scale-105 duration-300"
-                        >
-                            {{ slide }}
-                        </div>
-                    </div>
-                </slide>
-
-                <template #addons>
-                    <navigation />
-                    <pagination />
-                </template>
-            </carousel>
+            <Carusel :slider="slider" />
         </section>
     </GuestLayout>
 </template>
@@ -122,46 +119,65 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 <script>
 export default {
     data() {
-        return {};
+        return {
+            slider: [
+                {
+                    id: 1,
+                    name: "Минимальный",
+                    space: "Одностраничный сайт, чтобы заявить о себе в сети интернет! Подходит для фрилансеров,  небольшого бизнеса и продвижения конкретных услуг или товаров на одной странице",
+                    description:
+                        "Небольшая цена! Маленькие сроки ожидания готового проекта! Простая поддержка и сопровождение сайта!",
+                    price: 11200,
+                    info: {
+                        insight: "seo",
+                    },
+                    time: "1 - 2",
+                },
+                {
+                    id: 2,
+                    name: "Классичесикй",
+                    space: "Многостраничный сайт для решения задач среднего бизнеса",
+                    description:
+                        "Все, что необходимо для качественного сайта в комплекте.",
+                    price: 20200,
+                    info: {
+                        insight: "seo",
+                    },
+                    time: "1 - 2",
+                },
+                {
+                    id: 3,
+                    name: "Бизнес",
+                    space: "Многостраничный сайт премиум класса с дизайном наивысшего качества.",
+                    description:
+                        "Высший сорт дизайна позволяет клиенту проще ознакомится с сайтом, и окунутся в атмосферу вашего продукта.",
+                    price: 31200,
+                    info: {
+                        insight: "seo",
+                    },
+                    time: "1 - 2",
+                },
+            ],
+        };
     },
     props: {
         users: Object,
     },
     name: "Welcome",
     components: {
-        Carousel,
-        Slide,
-        Pagination,
-        Navigation,
+        Carusel,
     },
-    data: () => ({
-        // carousel settings
-        settings: {
-            itemsToShow: 1,
-        },
-        // breakpoints are mobile first
-        // any settings not specified will fallback to the carousel settings
-        breakpoints: {
-            // 700px and up
-            771: {
-                itemsToShow: 1.5,
-            },
-            // 1024 and up
-            1024: {
-                itemsToShow: 2.4,
-            },
-        },
-    }),
 };
 </script>
 
-<style>
+<style scoped>
 .root-anim {
     animation: 20s linear 0s normal none infinite running rot;
 }
 .root-anim1 {
     animation: 10s linear 0s normal none infinite running rot;
 }
+
 @keyframes rot {
     0% {
         transform: rotate(0deg);
