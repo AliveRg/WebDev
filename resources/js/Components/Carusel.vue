@@ -13,7 +13,7 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
         >
             <slide v-for="slide in slider" :key="slide" class="w-full">
                 <div
-                    class="flex flex-col gap-5 px-5 py-4 bg-bgLight dark:bg-bgDark text-black dark:text-textDark w-full h-[600px] rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 duration-300"
+                    class="flex flex-col justify-between gap-5 px-5 py-4 bg-bgLight dark:bg-bgDark text-black dark:text-textDark w-full h-[600px] rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 duration-300"
                 >
                     <div class="w-full text-left">
                         <p class="text-center text-3xl">{{ slide.name }}</p>
@@ -24,18 +24,19 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
                         <p class="text-xl">Преиущества</p>
                         {{ slide.description }}
                     </div>
-                    <div
-                        class="text-black sm:text-ms md:text-base text-center flex justify-center gap-2 w-full"
-                    >
-                        <p
-                            class="bg-accentLight dark:bg-accentDark py-1 px-2 rounded-xl text-black dark:text-textDark w-2/3"
-                        >
-                            Узнать больше
-                        </p>
-                    </div>
+
                     <div
                         class="w-full text-left flex flex-col justify-center items-center gap-4"
                     >
+                        <div
+                            class="text-black sm:text-ms md:text-base text-center flex justify-center gap-2 w-full"
+                        >
+                            <p
+                                class="bg-accentLight dark:bg-accentDark py-1 px-2 rounded-xl text-black dark:text-textDark w-2/3"
+                            >
+                                Узнать больше
+                            </p>
+                        </div>
                         <span class="material-symbols-outlined size">
                             update
                         </span>

@@ -11,15 +11,15 @@ import { useDark, useToggle } from "@vueuse/core";
             class="w-full grid grid-flow-row gap-[20px] md:gap-2 max-w-sm sm:max-w-lg sm:grid-cols-2 mx-auto md:grid-cols-4 md:max-w-4xl lg:max-w-[1380px]"
         >
             <div
-                class="text-2xl text-textLight dark:text-textDark font-extrabold uppercase flex items-center justify-between gap-8 sm:flex-col sm:items-start sm:gap-2 md:order-1 md:text-3xl md:w-2/3 lg:text-5xl"
+                class="text-2xl text-textLight dark:text-textDark font-extrabold uppercase flex items-center justify-center gap-4 sm:items-center sm:gap-8 md:order-1 md:text-3xl lg:text-5xl gif"
             >
-                <p class="">R&G</p>
-                <p
-                    class="text-sm font-normal sm:text-xs md:text-sm lg:text-xl md:hidden"
-                >
+                <img src="images/logo.gif" alt="" class="h-16 sm:h-[80PX]" />
+                <!-- <video src="images/logo.gif" class="h-16 sm:h-[80PX]"></video> -->
+                <p class="text-sm font-normal sm:text-xs md:text-sm lg:text-xl">
                     Студия создания сайтов
                 </p>
             </div>
+
             <div
                 class="text-lg text-textLight dark:text-textDark font-extrabold leading-7 flex justify-start sm:justify-end md:order-3 md:items-center lg:text-2xl animate-pulse"
             >
@@ -44,7 +44,7 @@ import { useDark, useToggle } from "@vueuse/core";
                 class="w-full flex md: sm:col-span-2 md:order-4 md:col-span-4 md:justify-start"
             >
                 <div
-                    class="flex w-full justify-between items-center sm:col-span-2 md:order-4 md:col-span-4 md:justify-start md:gap-10 md:flex-row-reverse"
+                    class="flex w-full justify-between items-center sm:col-span-2 md:order-4 md:col-span-2 md:justify-start md:gap-10 md:flex-row-reverse"
                 >
                     <div class="text-black text-md text-center grid gap-2">
                         <p
@@ -67,12 +67,12 @@ import { useDark, useToggle } from "@vueuse/core";
                     </label>
                 </div>
                 <div
-                    class="hidden md:block text-textLight dark:text-textDark justify-self-start"
+                    class="hidden md:block text-textLight dark:text-textDark justify-self-start opacity-0"
                 >
                     <p
                         class="text-sm font-normal sm:text-xs md:text-lg lg:text-xl"
                     >
-                        Студия создания сайтов
+                        Студия
                     </p>
                 </div>
             </div>

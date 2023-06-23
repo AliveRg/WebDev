@@ -10,9 +10,9 @@ import Carusel from "@/Components/Carusel.vue";
         <section
             class="unselectable relative grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
         >
-            <div
+            <!-- <div
                 class="absolute top-0 left-0 right-0 bottom-10 bg-[url('images/bg.jpg')] bg-cover blur-sm"
-            ></div>
+            ></div> -->
             <div
                 class="flex flex-col z-10 gap-4 items-center justify-center md:items-start md:gap-10 overflow-hidden text-center md:text-start text-3xl text-black dark:text-textDark font-extrabold sm:text-4xl md:text-5xl lg:text-6xl"
             >
@@ -65,7 +65,7 @@ import Carusel from "@/Components/Carusel.vue";
                     alt=""
                 />
                 <img
-                    class="hidden dark:block dark:absolute opacity-100 top-0 -left-44 h-full z-0 root-anim"
+                    class="hidden dark:block dark:absolute opacity-100 top-0 -left-56 h-full z-0 root-anim"
                     src="images/meh22.png"
                     alt=""
                 />
@@ -80,22 +80,22 @@ import Carusel from "@/Components/Carusel.vue";
                     alt=""
                 />
                 <img
-                    class="block dark:hidden absolute opacity-60 -top-32 left-44 h-full z-0 root-anim1"
+                    class="block dark:hidden absolute opacity-80 -top-32 left-44 h-full z-0 root-anim1"
                     src="images/meh12.png"
                     alt=""
                 />
                 <img
-                    class="block dark:hidden absolute opacity-60 top-0 -left-44 h-full z-0 root-anim"
+                    class="block dark:hidden absolute opacity-80 top-0 -left-56 h-full z-0 root-anim"
                     src="images/meh22.png"
                     alt=""
                 />
                 <img
-                    class="block dark:hidden absolute opacity-60 top-10 left-64 h-full z-0 root-anim"
+                    class="block dark:hidden absolute opacity-80 top-10 left-64 h-full z-0 root-anim"
                     src="images/meh33.png"
                     alt=""
                 />
                 <img
-                    class="block dark:hidden absolute opacity-60 top-24 -left-0 h-full z-0 root-anim1"
+                    class="block dark:hidden absolute opacity-80 top-24 -left-0 h-full z-0 root-anim1"
                     src="images/meh44.png"
                     alt=""
                 />
@@ -175,7 +175,7 @@ export default {
     animation: 20s linear 0s normal none infinite running rot;
 }
 .root-anim1 {
-    animation: 10s linear 0s normal none infinite running rot;
+    animation: 10s linear 0s normal none infinite running rotre;
 }
 
 @keyframes rot {
@@ -184,6 +184,14 @@ export default {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+@keyframes rotre {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
     }
 }
 
