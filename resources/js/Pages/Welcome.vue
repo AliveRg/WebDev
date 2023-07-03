@@ -8,7 +8,7 @@ import Carusel from "@/Components/Carusel.vue";
 <template>
     <GuestLayout>
         <section
-            class="unselectable relative grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
+            class="unselectable bg-[url('images/animate_prevue.gif')] relative grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
         >
             <!-- <div
                 class="absolute top-0 left-0 right-0 bottom-10 bg-[url('images/bg.jpg')] bg-cover blur-sm"
@@ -59,7 +59,7 @@ import Carusel from "@/Components/Carusel.vue";
                     />
                 </div>
 
-                <img
+                <!-- <img
                     class="hidden dark:block dark:absolute opacity-100 -top-32 left-44 h-full z-0 root-anim1"
                     src="images/meh12.png"
                     alt=""
@@ -78,8 +78,12 @@ import Carusel from "@/Components/Carusel.vue";
                     class="hidden dark:block dark:absolute opacity-100 top-24 -left-0 h-full z-0 root-anim1"
                     src="images/meh44.png"
                     alt=""
-                />
-                <img
+                /> -->
+                <!-- <img
+                    class="hidden w-screen dark:block dark:absolute opacity-100 z-30"
+                    src="images/animate_prevue.gif"
+                /> -->
+                <!-- <img
                     class="block dark:hidden absolute opacity-80 -top-32 left-44 h-full z-0 root-anim1"
                     src="images/meh12.png"
                     alt=""
@@ -98,7 +102,7 @@ import Carusel from "@/Components/Carusel.vue";
                     class="block dark:hidden absolute opacity-80 top-24 -left-0 h-full z-0 root-anim1"
                     src="images/meh44.png"
                     alt=""
-                />
+                /> -->
             </div>
         </section>
         <section class="grid grid-flow-row gap-12 pb-64">
@@ -111,7 +115,49 @@ import Carusel from "@/Components/Carusel.vue";
                 </p>
             </div>
 
-            <Carusel :slider="slider" />
+            <Carusel class="sm:hidden" :slider="slider" />
+            <div
+                class="hidden sm:grid grid-cols-3 w-full items-center justify-between gap-9"
+            >
+                <div
+                    v-for="slide in slider"
+                    :key="slide"
+                    class="flex flex-col justify-between gap-9 px-5 py-4 bg-bgLight dark:bg-bgDark text-black dark:text-textDark w-full h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 duration-300"
+                >
+                    <div class="flex flex-col gap-9">
+                        <div class="w-full text-left">
+                            <p class="text-center text-xl">{{ slide.name }}</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 text-xs w-full text-left"
+                        >
+                            <p class="text-md">Назначение тарифа</p>
+                            {{ slide.space }}
+                            <p class="text-md">Преиущества</p>
+                            {{ slide.description }}
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-full text-left text-xs sm:text-md flex flex-col justify-center items-center gap-4"
+                    >
+                        <div
+                            class="text-black sm:text-xs md:text-sm text-center flex justify-center gap-2 w-full"
+                        >
+                            <p
+                                class="bg-accentLight dark:bg-accentDark py-1 px-2 rounded-xl text-black dark:text-textDark w-2/3"
+                            >
+                                Узнать больше
+                            </p>
+                        </div>
+                        <span class="material-symbols-outlined size">
+                            update
+                        </span>
+                        <p>Срок выполнения {{ slide.time }} месяца</p>
+                        <p class="text-xl">{{ slide.price }}</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </GuestLayout>
 </template>
@@ -196,6 +242,7 @@ export default {
 }
 
 .unselectable {
+    background-size: cover;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;

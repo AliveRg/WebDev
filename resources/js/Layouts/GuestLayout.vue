@@ -11,11 +11,13 @@ import { useDark, useToggle } from "@vueuse/core";
             class="w-full grid grid-flow-row gap-[20px] md:gap-2 max-w-sm sm:max-w-lg sm:grid-cols-2 mx-auto md:grid-cols-4 md:max-w-4xl lg:max-w-[1380px]"
         >
             <div
-                class="text-2xl text-textLight dark:text-textDark font-extrabold uppercase flex items-center justify-center gap-4 sm:items-center sm:gap-8 md:order-1 md:text-3xl lg:text-5xl gif"
+                class="text-2xl text-textLight dark:text-textDark font-extrabold uppercase flex items-center justify-between sm:justify-start gap-4 sm:items-center sm:gap-8 md:order-1 md:text-3xl lg:text-5xl gif"
             >
                 <img src="images/logo.gif" alt="" class="h-16 sm:h-[80PX]" />
                 <!-- <video src="images/logo.gif" class="h-16 sm:h-[80PX]"></video> -->
-                <p class="text-sm font-normal sm:text-xs md:text-sm lg:text-xl">
+                <p
+                    class="text-sm font-normal sm:text-xs sm:hidden md:text-sm lg:text-xl"
+                >
                     Студия создания сайтов
                 </p>
             </div>
@@ -41,10 +43,10 @@ import { useDark, useToggle } from "@vueuse/core";
                 >
             </div>
             <div
-                class="w-full flex md: sm:col-span-2 md:order-4 md:col-span-4 md:justify-start"
+                class="w-full flex md: sm:col-span-2 md:order-4 md:col-span-4 md:justify-between"
             >
                 <div
-                    class="flex w-full justify-between items-center sm:col-span-2 md:order-4 md:col-span-2 md:justify-start md:gap-10 md:flex-row-reverse"
+                    class="flex w-full justify-start items-center sm:col-span-2 md:order-4 md:col-span-2 md:justify-start md:gap-10 md:flex-row-reverse gap-12"
                 >
                     <div class="text-black text-md text-center grid gap-2">
                         <p
@@ -67,15 +69,16 @@ import { useDark, useToggle } from "@vueuse/core";
                     </label>
                 </div>
                 <div
-                    class="hidden md:block text-textLight dark:text-textDark justify-self-start opacity-0"
+                    class="hidden sm:flex text-textLight dark:text-textDark justify-self-start items-center"
                 >
                     <p
-                        class="text-sm font-normal sm:text-xs md:text-lg lg:text-xl"
+                        class="text-sm font-normal sm:text-sm md:text-md lg:text-xl"
                     >
-                        Студия
+                        Студия создания сайтов
                     </p>
                 </div>
             </div>
+
             <div
                 class="flex justify-between items-center font-bold text-sm text-textLight dark:text-textDark sm:col-span-2 md:order-2 md:text-lg lg:text-2xl"
             >
