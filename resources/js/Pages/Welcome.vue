@@ -243,7 +243,9 @@ export default {
 
 .unselectable {
     background-image: url(/images/animate_prewuve.gif);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
