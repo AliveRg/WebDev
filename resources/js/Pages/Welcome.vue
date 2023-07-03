@@ -8,7 +8,7 @@ import Carusel from "@/Components/Carusel.vue";
 <template>
     <GuestLayout>
         <section
-            class="unselectable bg-[url('images/animate_prevue.gif')] relative grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
+            class="unselectable relative grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
         >
             <!-- <div
                 class="absolute top-0 left-0 right-0 bottom-10 bg-[url('images/bg.jpg')] bg-cover blur-sm"
@@ -242,6 +242,7 @@ export default {
 }
 
 .unselectable {
+    background-image: url(/images/animate_prewuve.gif);
     background-size: cover;
     -moz-user-select: none;
     -khtml-user-select: none;
