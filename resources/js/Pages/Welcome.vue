@@ -3,6 +3,10 @@ import GuestLayout from "@/Layouts/GuestLayout.vue";
 
 import { Head, Link } from "@inertiajs/vue3";
 import Carusel from "@/Components/Carusel.vue";
+import SvgComponent1 from "@/Components/SvgComponent1.vue";
+import SvgComponent2 from "@/Components/SvgComponent2.vue";
+import SvgComponent3 from "@/Components/SvgComponent3.vue";
+import SvgComponent4 from "@/Components/SvgComponent4.vue";
 </script>
 
 <template>
@@ -105,7 +109,7 @@ import Carusel from "@/Components/Carusel.vue";
                 /> -->
             </div>
         </section>
-        <section class="grid grid-flow-row gap-12 pb-64">
+        <section class="grid grid-flow-row gap-12 pb-32 md:pb-64">
             <div
                 class="text-center md:text-start text-2xl text-textLight dark:text-textDark font-extrabold sm:text-3xl md:text-4xl lg:text-5xl"
             >
@@ -117,23 +121,42 @@ import Carusel from "@/Components/Carusel.vue";
 
             <Carusel class="sm:hidden" :slider="slider" />
             <div
-                class="hidden sm:grid grid-cols-3 w-full items-center justify-between gap-9"
+                class="hidden sm:grid grid-cols-1 md:grid-cols-3 w-full items-center justify-between gap-9 px-8"
             >
                 <div
                     v-for="slide in slider"
                     :key="slide"
-                    class="flex flex-col justify-between gap-9 px-5 py-4 bg-bgLight dark:bg-bgDark text-black dark:text-textDark w-full h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 duration-300"
+                    class="flex flex-col justify-between gap-9 px-5 py-4 bg-bgLight dark:bg-[#818080] text-black dark:text-textDark w-full h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 duration-300"
                 >
                     <div class="flex flex-col gap-9">
                         <div class="w-full text-left">
-                            <p class="text-center text-xl">{{ slide.name }}</p>
+                            <p class="text-center text-xl md:text-2xl">
+                                {{ slide.name }}
+                            </p>
                         </div>
                         <div
-                            class="flex flex-col gap-4 text-xs w-full text-left"
+                            class="flex flex-col gap-4 w-full text-left text-base md:text-md"
                         >
-                            <p class="text-md">Назначение тарифа</p>
+                            <div
+                                class="flex items-center justify-start gap-8 relative"
+                            >
+                                <div
+                                    class="absolute top-0 -left-[7%] w-4 h-4 bg-currentLight"
+                                ></div>
+                                <p class="text-md md:text-lg">
+                                    Назначение тарифа
+                                </p>
+                            </div>
+
                             {{ slide.space }}
-                            <p class="text-md">Преиущества</p>
+                            <div
+                                class="flex items-center justify-start gap-8 relative"
+                            >
+                                <div
+                                    class="absolute top-0 -left-[7%] w-4 h-4 bg-currentLight"
+                                ></div>
+                                <p class="text-md md:text-lg">Преимущества</p>
+                            </div>
                             {{ slide.description }}
                         </div>
                     </div>
@@ -156,6 +179,49 @@ import Carusel from "@/Components/Carusel.vue";
                         <p>Срок выполнения {{ slide.time }} месяца</p>
                         <p class="text-xl">{{ slide.price }}</p>
                     </div>
+                </div>
+            </div>
+            <div
+                class="hover:animate-pulse md:text-start text-xs text-textLight dark:text-textDark font-extrabold sm:text-sm lg:text-lg"
+            >
+                <p class="text-center">
+                    Создайте собственный тариф с расчетом стоимости
+                </p>
+            </div>
+        </section>
+        <section
+            class="flex flex-col gap-10 sm:gap-40 pb-64 text-textLight dark:text-textDark text-xs text-md md:text-lg"
+        >
+            <div class="flex justify-evenly items-center">
+                <div
+                    class="w-1/3 flex flex-col jastify-start md:text-start text-textLight dark:text-textDark font-extrabold"
+                >
+                    <p class="text-center">Закажите консультацию</p>
+                    <SvgComponent1 />
+                </div>
+
+                <hr class="rotate-90 w-1/5" />
+
+                <div
+                    class="w-1/3 flex flex-col md:text-start text-textLight dark:text-textDark font-extrabold"
+                >
+                    <p class="text-center">Выберете или сформируйте тариф</p>
+                    <SvgComponent2 />
+                </div>
+            </div>
+            <div class="flex justify-evenly items-center">
+                <div
+                    class="w-1/3 flex flex-col md:text-start text-textLight dark:text-textDark font-extrabold"
+                >
+                    <p class="text-center">Внесите корректировки в проект </p>
+                    <SvgComponent3 />
+                </div>
+                <hr class="rotate-90 w-1/5" />
+                <div
+                    class="w-1/3 flex flex-col md:text-start text-textLight dark:text-textDark font-extrabold"
+                >
+                    <p class="text-center">Принимайте готовое задание</p>
+                    <SvgComponent4 />
                 </div>
             </div>
         </section>

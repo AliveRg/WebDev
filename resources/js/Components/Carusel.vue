@@ -19,9 +19,23 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
                         <p class="text-center text-3xl">{{ slide.name }}</p>
                     </div>
                     <div class="flex flex-col gap-4 w-full text-sm text-left">
-                        <p class="text-xl">Назначение тарифа</p>
+                        <div
+                            class="flex items-center justify-start gap-8 relative"
+                        >
+                            <div
+                                class="absolute top-0 -left-[8%] w-4 h-4 bg-currentLight"
+                            ></div>
+                            <p class="text-md">Назначение тарифа</p>
+                        </div>
                         {{ slide.space }}
-                        <p class="text-xl">Преиущества</p>
+                        <div
+                            class="flex items-center justify-start gap-8 relative"
+                        >
+                            <div
+                                class="absolute top-0 -left-[8%] w-4 h-4 bg-currentLight"
+                            ></div>
+                            <p class="text-md">Преимущества</p>
+                        </div>
                         {{ slide.description }}
                     </div>
 

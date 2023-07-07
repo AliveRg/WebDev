@@ -21,9 +21,8 @@ import { useDark, useToggle } from "@vueuse/core";
                     Студия создания сайтов
                 </p>
             </div>
-
             <div
-                class="text-lg text-textLight dark:text-textDark font-extrabold leading-7 flex justify-start sm:justify-end md:order-3 md:items-center lg:text-2xl animate-pulse"
+                class="text-lg text-textLight dark:text-textDark font-extrabold leading-7 flex justify-start sm:justify-end md:order-3 md:items-center lg:text-2xl hover:animate-pulse"
             >
                 <a
                     class="md:hidden flex items-center gap-2"
