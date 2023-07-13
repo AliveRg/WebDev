@@ -7,6 +7,8 @@ import SvgComponent1 from "@/Components/SvgComponent1.vue";
 import SvgComponent2 from "@/Components/SvgComponent2.vue";
 import SvgComponent3 from "@/Components/SvgComponent3.vue";
 import SvgComponent4 from "@/Components/SvgComponent4.vue";
+import Swiper from "@/Components/SwiperCarusel.vue";
+import GearBack from "@/Components/GearSetting.vue";
 </script>
 
 <template>
@@ -14,11 +16,14 @@ import SvgComponent4 from "@/Components/SvgComponent4.vue";
         <section
             class="unselectable relative grid grid-flow-row md:grid-flow-col gap-10 justify-center pt-32 pb-64 px-4"
         >
+            <div class="absolute top-0 left-0 ring-0 bottom-0">
+                <GearBack />
+            </div>
             <!-- <div
                 class="absolute top-0 left-0 right-0 bottom-10 bg-[url('images/bg.jpg')] bg-cover blur-sm"
             ></div> -->
             <div
-                class="flex flex-col z-10 gap-4 items-center justify-center md:items-start md:gap-10 overflow-hidden text-center md:text-start text-3xl text-black dark:text-textDark font-extrabold sm:text-4xl md:text-5xl lg:text-6xl"
+                class="relative z-20 flex flex-col gap-4 items-center justify-center md:items-start md:gap-10 overflow-hidden text-center md:text-start text-3xl text-black dark:text-textDark font-extrabold sm:text-4xl md:text-5xl lg:text-6xl"
             >
                 <p>
                     Лендинг со <br />
@@ -109,7 +114,7 @@ import SvgComponent4 from "@/Components/SvgComponent4.vue";
                 /> -->
             </div>
         </section>
-        <section class="grid grid-flow-row gap-12 pb-32 md:pb-64">
+        <section class="grid grid-flow-row gap-5 pb-24 md:pb-32" id="price">
             <div
                 class="text-center md:text-start text-2xl text-textLight dark:text-textDark font-extrabold sm:text-3xl md:text-4xl lg:text-5xl"
             >
@@ -126,7 +131,7 @@ import SvgComponent4 from "@/Components/SvgComponent4.vue";
                 <div
                     v-for="slide in slider"
                     :key="slide"
-                    class="flex flex-col justify-between gap-9 px-5 py-4 bg-bgLight dark:bg-[#818080] text-black dark:text-textDark w-full h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 duration-300"
+                    class="flex flex-col justify-between gap-9 px-5 py-4 bg-bgLight dark:bg-currentDark text-black dark:text-textDark w-full h-full rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 duration-300"
                 >
                     <div class="flex flex-col gap-9">
                         <div class="w-full text-left">
@@ -194,7 +199,7 @@ import SvgComponent4 from "@/Components/SvgComponent4.vue";
         >
             <div class="flex justify-evenly items-center">
                 <div
-                    class="w-1/3 flex flex-col jastify-start md:text-start text-textLight dark:text-textDark font-extrabold"
+                    class="w-1/3 flex flex-col gap-5 sm:gap-12 md:gap-20 jastify-start md:text-start text-textLight dark:text-textDark font-extrabold"
                 >
                     <p class="text-center">Закажите консультацию</p>
                     <SvgComponent1 />
@@ -203,7 +208,7 @@ import SvgComponent4 from "@/Components/SvgComponent4.vue";
                 <hr class="rotate-90 w-1/5" />
 
                 <div
-                    class="w-1/3 flex flex-col md:text-start text-textLight dark:text-textDark font-extrabold"
+                    class="w-1/3 flex flex-col gap-5 sm:gap-12 md:gap-20 md:text-start text-textLight dark:text-textDark font-extrabold"
                 >
                     <p class="text-center">Выберете или сформируйте тариф</p>
                     <SvgComponent2 />
@@ -211,18 +216,31 @@ import SvgComponent4 from "@/Components/SvgComponent4.vue";
             </div>
             <div class="flex justify-evenly items-center">
                 <div
-                    class="w-1/3 flex flex-col md:text-start text-textLight dark:text-textDark font-extrabold"
+                    class="w-1/3 flex flex-col gap-5 sm:gap-12 md:gap-20 md:text-start text-textLight dark:text-textDark font-extrabold"
                 >
                     <p class="text-center">Внесите корректировки в проект </p>
                     <SvgComponent3 />
                 </div>
                 <hr class="rotate-90 w-1/5" />
                 <div
-                    class="w-1/3 flex flex-col md:text-start text-textLight dark:text-textDark font-extrabold"
+                    class="w-1/3 flex flex-col gap-5 sm:gap-12 md:gap-20 md:text-start text-textLight dark:text-textDark font-extrabold"
                 >
                     <p class="text-center">Принимайте готовое задание</p>
                     <SvgComponent4 />
                 </div>
+            </div>
+        </section>
+        <section class="flex flex-col gap-10 justify-center">
+            <div
+                class="text-center md:text-start text-2xl text-textLight dark:text-textDark font-extrabold sm:text-3xl md:text-4xl lg:text-5xl"
+            >
+                <p class="text-center">Тарифы</p>
+                <p class="text-center text-xl sm:text-2xl md:text-3xl">
+                    Комплектом дешевле
+                </p>
+            </div>
+            <div class="">
+                <Swiper />
             </div>
         </section>
     </GuestLayout>
@@ -278,6 +296,8 @@ export default {
     name: "Welcome",
     components: {
         Carusel,
+        Swiper,
+        GearBack,
     },
 };
 </script>
@@ -308,10 +328,10 @@ export default {
 }
 
 .unselectable {
-    background-image: url(/images/animate_prewuve.gif);
+    /* background-image: url(/images/animate_prewuve.gif);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center; */
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;

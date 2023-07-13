@@ -82,7 +82,7 @@ import { useDark, useToggle } from "@vueuse/core";
                 class="flex justify-between items-center font-bold text-sm text-textLight dark:text-textDark sm:col-span-2 md:order-2 md:text-lg lg:text-2xl"
             >
                 <a class="" href="">Расчет стоимости</a>
-                <a class="" href="">Услуги</a>
+                <a class="" href="#price">Услуги</a>
                 <a class="" href="">Портфолио</a>
             </div>
             <hr

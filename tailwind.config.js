@@ -20,7 +20,7 @@ export default {
             },
             colors: {
                 transparent: "transparent",
-                currentDark: "#",
+                currentDark: "#F1F1F1",
                 currentLight: "#91cac5",
                 accentDark: "#F2AE30",
                 accentLight: "#F2CF66",
